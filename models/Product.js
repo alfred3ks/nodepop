@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose');
 
+// Schema to control the data that goes to the DB:
 const productSchema = mongoose.Schema(
   {
     name: {
