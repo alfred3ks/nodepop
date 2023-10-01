@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productos</title>
+  </head>
+  <body>
+    <h1>List of products</h1>
+    <ul>
+      <% products.forEach(function(product) { %>
+      <li>
+        <h2><%= product.name %></h2>
+        <p>Price:<%= product.price %>€</p>
+        <p>On sale: <%= product.onSale ? 'Yes' : 'No' %></p>
+        <img
+          src="<%= product.photo %>"
+          alt="<%= product.name %>"
+          style="width: 150px"
+        />
+        <p>Tags: <%= product.tags.join(', ') %></p>
+      </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
