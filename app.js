@@ -7,8 +7,9 @@ var logger = require('morgan');
 // connect with the DB:
 require('./lib/connectMongoose');
 
-var indexRouter = require('./routes/index');
-var productsRouter = require('./routes/products');
+const indexRouter = require('./routes/index');
+const productsRouter = require('./routes/products');
+const apiRouter = require('./routes/api/products');
 
 var app = express();
 
@@ -24,6 +25,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+/*
+ * Api routes:
+ */
+app.use('/api/products', apiRouter);
 
 /*
  * web routes:
