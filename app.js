@@ -4,12 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// connect with the DB:
+require('./lib/connectMongoose');
+
 var indexRouter = require('./routes/index');
 var productsRouter = require('./routes/products');
 
 var app = express();
 
-// Defino nombre de la app para tener acceso desde cualquier archivo:
+// define the name of the app to have access from any file:
 app.locals.title = 'NodeApp';
 
 // view engine setup
@@ -23,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /*
- * Rutas web:
+ * web routes:
  */
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
