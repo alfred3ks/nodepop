@@ -31,6 +31,23 @@ const productSchema = mongoose.Schema(
   { collection: 'products' }
 );
 
+// static method for filters:
+productSchema.statics.list = function (filter, skip, limit, sort, fields) {
+  // filters:
+  const query = Product.find(filter);
+  query.skip(skip);
+  query.limit(limit);
+  query.sort(sort);
+  query.select(fields);
+
+  return query.exec();
+};
+
+// Static method for all tags:
+productSchema.statics.allTags = function () {
+  return ['motor', 'lifestyle', 'mobile', 'work', 'videogame'];
+};
+
 // Create a model from the schematic
 const Product = mongoose.model('Product', productSchema);
 
