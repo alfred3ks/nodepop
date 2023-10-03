@@ -2,31 +2,38 @@
   "products": [
     {
       "name": "bicycle",
-      "onSale": true,
-      "price": 16345,
+      "sale": true,
+      "price": 3345,
       "photo": "./images/bicycle.jpg",
       "tags": ["lifestyle", "motor"]
     },
     {
       "name": "iPhone 15",
-      "onSale": false,
+      "sale": false,
       "price": 1350,
       "photo": "./images/iphone15.jpg",
       "tags": ["work", "mobile"]
     },
     {
       "name": "xbox X",
-      "onSale": true,
+      "sale": true,
       "price": 499,
       "photo": "./images/xbox-x.jpg",
-      "tags": ["lifestyle", "videogame"]
+      "tags": ["lifestyle"]
     },
     {
       "name": "car charger",
-      "onSale": false,
-      "price": 15,
+      "sale": false,
+      "price": 25,
       "photo": "./images/car-charger.jpg",
       "tags": ["lifestyle", "motor"]
+    },
+    {
+      "name": "iPhone 14",
+      "sale": true,
+      "price": 1199,
+      "photo": "./images/iphone14.jpg",
+      "tags": ["lifestyle", "mobile"]
     }
   ]
 }

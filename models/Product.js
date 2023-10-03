@@ -10,7 +10,7 @@ const productSchema = mongoose.Schema(
       required: true,
       index: true,
     },
-    onSale: {
+    sale: {
       type: Boolean,
       default: false,
     },
@@ -45,7 +45,7 @@ productSchema.statics.list = function (filter, skip, limit, sort, fields) {
 
 // Static method for all tags:
 productSchema.statics.allTags = function () {
-  return ['motor', 'lifestyle', 'mobile', 'work', 'videogame'];
+  return ['motor', 'lifestyle', 'mobile', 'work'];
 };
 
 // Create a model from the schematic
