@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../stylesheets/style.css" />
     <title>Products</title>
   </head>
   <body>
@@ -11,14 +12,14 @@
     <p>Products displayed: <%= products.length %></p>
     <ul>
       <% products.forEach(function(product){ %>
-      <li style="list-style: none">
+      <li>
         <h2><%= product.name %></h2>
+        <img src="<%= product.photo %>" />
         <p><%= product.price ? `Price: ${product.price} €` : '' %></p>
         <% if (fields !== 'name' && fields !== 'price' && fields !== 'tags') {
         %>
         <p><%= product.sale ? 'On sale: Yes' : 'On sale: No' %></p>
         <% } %>
-        <img src="<%= product.photo %>" style="width: 150px" />
         <p><%= product.tags ? `Tags: ${product.tags.join(', ')}` : '' %></p>
       </li>
       <% }); %>
