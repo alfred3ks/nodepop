@@ -15,7 +15,6 @@ router.get('/', async (req, res, next) => {
     const filterByPrice = req.query.price;
     const filterByTag = req.query.tag;
     const { minPrice, maxPrice } = req.query;
-    console.log(minPrice, maxPrice);
 
     // pagination:
     //http://localhost:3000/api/products?skip=0&limit=10
@@ -41,11 +40,13 @@ router.get('/', async (req, res, next) => {
       filter.name = { $regex: `^${filterByName}`, $options: 'i' };
     }
 
-    // http://localhost:3000/api/products?price=300
-    if (filterBySale !== undefined) {
+    // http://localhost:3000/api/products?sale=yes
+    // http://localhost:3000/api/products?sale=no
+    if (filterBySale === 'yes' || filterBySale === 'no') {
       filter.sale = filterBySale;
     }
 
+    // http://localhost:3000/api/products?price=300
     // Filtro por precio exacto:
     if (filterByPrice !== undefined) {
       filter.price = filterByPrice;

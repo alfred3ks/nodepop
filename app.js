@@ -8,7 +8,6 @@ var logger = require('morgan');
 require('./lib/connectMongoose');
 
 const indexRouter = require('./routes/index');
-const productsRouter = require('./routes/products');
 const apiRouter = require('./routes/api/products');
 
 var app = express();
@@ -35,7 +34,6 @@ app.use('/api/products', apiRouter);
  * web routes:
  */
 app.use('/', indexRouter);
-app.use('/products', productsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

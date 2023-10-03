@@ -34,6 +34,20 @@
       "price": 1199,
       "photo": "./images/iphone14.jpg",
       "tags": ["lifestyle", "mobile"]
+    },
+    {
+      "name": "funda iPhone 15",
+      "sale": true,
+      "price": 35,
+      "photo": "./images/funda-iphone15.jpg",
+      "tags": ["lifestyle", "mobile"]
+    },
+    {
+      "name": "funda iPhone 14",
+      "sale": true,
+      "price": 29,
+      "photo": "./images/funda-iphone14.jpg",
+      "tags": ["lifestyle", "mobile"]
     }
   ]
 }

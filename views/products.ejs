@@ -6,19 +6,20 @@
     <title>Products</title>
   </head>
   <body>
-    <h1>List of products</h1>
+    <h1>Nodepop</h1>
+    <h2>List of products</h2>
+    <p>Products displayed: <%= products.length %></p>
     <ul>
-      <% products.forEach(function(product) { %>
-      <li>
+      <% products.forEach(function(product){ %>
+      <li style="list-style: none">
         <h2><%= product.name %></h2>
-        <p>Price:<%= product.price %>€</p>
-        <p>On sale: <%= product.onSale ? 'Yes' : 'No' %></p>
-        <img
-          src="<%= product.photo %>"
-          alt="<%= product.name %>"
-          style="width: 150px"
-        />
-        <p>Tags: <%= product.tags.join(', ') %></p>
+        <p><%= product.price ? `Price: ${product.price} €` : '' %></p>
+        <% if (fields !== 'name' && fields !== 'price' && fields !== 'tags') {
+        %>
+        <p><%= product.sale ? 'On sale: Yes' : 'On sale: No' %></p>
+        <% } %>
+        <img src="<%= product.photo %>" style="width: 150px" />
+        <p><%= product.tags ? `Tags: ${product.tags.join(', ')}` : '' %></p>
       </li>
       <% }); %>
     </ul>
