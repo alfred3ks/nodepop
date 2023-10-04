@@ -138,11 +138,11 @@ $ npm run dev
   In case of errors, the API will provide a response with a corresponding HTTP status code and a descriptive error message.
   Example error response:
 
-  ```json
-  {
-    "error": "Not Found"
-  }
-  ```
+```json
+{
+  "error": "Not Found"
+}
+```
 
 ## WebSite EndPoints:
 

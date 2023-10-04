@@ -2,88 +2,14 @@
 const express = require('express');
 const router = express.Router();
 const Product = require('../../models/Product');
+const validationMiddleware = require('../../lib/validationMiddleware');
+const filterProducts = require('../../lib/filterProducts');
 
 // GET: /api/products
 // Get products
 // http://localhost:3000/api/products
-
-router.get('/', async (req, res, next) => {
-  try {
-    // Filters:
-    const filterByName = req.query.name;
-    const filterBySale = req.query.sale;
-    const filterByPrice = req.query.price;
-    const filterByTag = req.query.tag;
-    const { minPrice, maxPrice } = req.query;
-
-    // pagination:
-    //http://localhost:3000/api/products?skip=0&limit=10
-    //http://localhost:3000/api/products?skip=20&limit=20
-    const skip = parseInt(req.query.skip) || 0;
-    const limit = parseInt(req.query.limit) || 10;
-
-    // Ordenamos:
-    // http://localhost:3000/api/products?sort=name
-    // http://localhost:3000/api/products?sort=price
-    const sort = req.query.sort;
-
-    // http://localhost:3000/api/products?fields=name
-    const fields = req.query.fields;
-    console.log(fields);
-
-    const filter = {};
-
-    // http://localhost:3000/api/products?name=b
-    // http://localhost:3000/api/products?name=bicycle
-    if (filterByName !== undefined) {
-      // Con el modificador i hace la busqueda sin importar si es mayus o minuscula
-      filter.name = { $regex: `^${filterByName}`, $options: 'i' };
-    }
-
-    // http://localhost:3000/api/products?sale=yes
-    // http://localhost:3000/api/products?sale=no
-    if (filterBySale === 'yes' || filterBySale === 'no') {
-      filter.sale = filterBySale;
-    }
-
-    // http://localhost:3000/api/products?price=300
-    // Filtro por precio exacto:
-    if (filterByPrice !== undefined) {
-      filter.price = filterByPrice;
-    }
-
-    // Greater than that price
-    // http://localhost:3000/api/products?minPrice=100&maxPrice=1500
-    // http://localhost:3000/api/products?minPrice=100
-    // http://localhost:3000/api/products?maxPrice=1500
-    if (minPrice !== undefined && maxPrice !== undefined) {
-      // Buscar productos en el rango especificado
-      filter.price = {
-        $gte: minPrice,
-        $lte: maxPrice,
-      };
-    } else if (minPrice !== undefined) {
-      // Buscar productos con precio menor al valor dado
-      filter.price = {
-        $lt: minPrice,
-      };
-    } else if (maxPrice !== undefined) {
-      // Buscar productos con precio mayor al valor dado
-      filter.price = {
-        $gt: maxPrice,
-      };
-    }
-
-    //http://localhost:3000/api/products?tag=mobile
-    if (filterByTag !== undefined) {
-      filter.tags = { $in: [filterByTag] };
-    }
-
-    const products = await Product.list(filter, skip, limit, sort, fields);
-    res.json({ result: [{ products }] });
-  } catch (err) {
-    next(err);
-  }
+router.get('/', validationMiddleware, async (req, res, next) => {
+  filterProducts(req, res, next, 'json');
 });
 
 // GET: /api/products/tags

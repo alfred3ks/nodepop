@@ -13,7 +13,7 @@ const apiRouter = require('./routes/api/products');
 var app = express();
 
 // define the name of the app to have access from any file:
-app.locals.title = 'NodeApp';
+app.locals.title = 'Nodepop';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/products', apiRouter);
 
 /*
- * web routes:
+ * Web routes:
  */
 app.use('/', indexRouter);
 
