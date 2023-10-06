@@ -72,4 +72,4 @@ http://localhost:3000/api/products?tag=lifestyle
 http://localhost:3000/api/products?tag=work
 
 http://localhost:3000/api/products?tag=mobile&sale=yes&name=i&price=50
-http://localhost:3000/api/products?tag=mobile&name=c&sale=yes
+http://localhost:3000/api/products?tag=mobile&name=i&sale=yes

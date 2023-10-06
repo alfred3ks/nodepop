@@ -1,4 +1,4 @@
-/* Establece el cuerpo como un contenedor de cuadrícula */
+/* Set the body as a grid container */
 ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -8,58 +8,42 @@ ul {
   font-family: Arial, sans-serif;
 }
 
-/* Estilo para el encabezado */
 h1 {
   font-size: 24px;
   padding-left: 20px;
 }
 
-/* Estilo para la subcabecera */
-h2 {
-  font-size: 20px;
-}
-
-/* Estilo para el número de productos */
-p {
-  font-size: 16px;
-  padding-left: 20px;
-}
-
-/* Estilo para cada elemento de la lista */
-li {
-  border: 1px solid #ddd;
-  padding: 10px;
-  /* text-align: center; */
-  list-style: none;
-}
-
-/* Estilo para el nombre del producto */
 h2 {
   font-size: 18px;
   margin: 10px 0;
   padding-left: 20px;
 }
 
-/* Estilo para el precio del producto */
+p {
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+li {
+  border: 1px solid #ddd;
+  padding: 10px;
+  list-style: none;
+}
+
+img {
+  width: 250px;
+}
+
 p.price {
   font-weight: bold;
   color: #007bff;
 }
 
-/* Estilo para el estado de venta */
 p.sale {
   font-weight: bold;
   color: #28a745;
 }
 
-/* Estilo para la imagen del producto */
-img {
-  /* max-width: 100%; */
-  width: 250px;
-  height: auto;
-}
-
-/* Estilo para las etiquetas (tags) */
 p.tags {
   font-style: italic;
   color: #888;

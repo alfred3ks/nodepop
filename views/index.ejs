@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,12 +16,16 @@
       <li>
         <h2><%= product.name %></h2>
         <img src="<%= product.photo %>" />
-        <p><%= product.price ? `Price: ${product.price} €` : '' %></p>
+        <p class="price">
+          <%= product.price ? `Price: ${product.price} €` : '' %>
+        </p>
         <% if (fields !== 'name' && fields !== 'price' && fields !== 'tags') {
         %>
-        <p><%= product.sale ? 'On sale: Yes' : 'On sale: No' %></p>
+        <p class="sale"><%= product.sale ? 'On sale: Yes' : 'On sale: No' %></p>
         <% } %>
-        <p><%= product.tags ? `Tags: ${product.tags.join(', ')}` : '' %></p>
+        <p class="tags">
+          <%= product.tags ? `Tags: ${product.tags.join(', ')}` : '' %>
+        </p>
       </li>
       <% }); %>
     </ul>
