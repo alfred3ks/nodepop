@@ -26,6 +26,7 @@ const productSchema = mongoose.Schema(
       type: [String],
       index: true,
     },
+    owner: { ref: 'User', type: mongoose.Schema.Types.ObjectId },
   },
   // control the pluralization of mongoose
   { collection: 'products' }

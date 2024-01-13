@@ -43,8 +43,34 @@ async function initProducts() {
   const deleted = await Product.deleteMany();
   console.log(`Eliminated ${deleted.deletedCount} products`);
 
+  // Obtenemos el id del usuario de bd:
+  const [user, luke] = await Promise.all([
+    User.findOne({ email: 'user@example.com' }),
+    User.findOne({ email: 'luke@example.com' }),
+  ]);
+
+  // Le asignamos los usuarios a los agentes:
+  const dataProducts = initData.products.map((product, index) => {
+    if (index === 0) {
+      return { ...product, owner: user._id };
+    } else if (index === 1) {
+      return { ...product, owner: user._id };
+    } else if (index === 2) {
+      return { ...product, owner: user._id };
+    } else if (index === 3) {
+      return { ...product, owner: user._id };
+    } else if (index === 4) {
+      return { ...product, owner: luke._id };
+    } else if (index === 5) {
+      return { ...product, owner: luke._id };
+    } else if (index === 6) {
+      return { ...product, owner: luke._id };
+    }
+    return product;
+  });
+
   // add new data to the database:
-  const inserted = await Product.insertMany(initData.products);
+  const inserted = await Product.insertMany(dataProducts);
   console.log(`Created ${inserted.length} products`);
 }
 
