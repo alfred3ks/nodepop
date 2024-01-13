@@ -6,24 +6,30 @@ Welcome to Nodepop API documentation. This API provides access to a collection o
 
 Install dependencies:
 
-```ssh
+```bash
 $ npm install
 ```
 
-Review database connection on /lib/connectMongoose.js (see "Star a MongoDB server only in MacOs or Linux")
+Copy .env.example to you custom .env.
+
+```bash
+cp .env.example .env
+```
+
+And setup your configuration.
 
 ## Start a MongoDB server only in MacOS or Linux:
 
 From the folder of server:
 
-```ssh
+```bash
 ./bin/mongod --dbpath ./data
 ```
 
 Load data:
 This comand delete all the data in the database and create default data:
 
-```ssh
+```bash
 $ npm run initDB
 ```
 
@@ -31,13 +37,13 @@ $ npm run initDB
 
 In production:
 
-```ssh
+```bash
 $ npm start
 ```
 
 In development:
 
-```ssh
+```bash
 $ npm run dev
 ```
 
