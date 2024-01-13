@@ -1,53 +1,83 @@
 {
+  "users": [
+    {
+      "email": "user@example.com",
+      "password": "1234"
+    },
+    {
+      "email": "luke@example.com",
+      "password": "1234"
+    }
+  ],
   "products": [
     {
       "name": "bicycle",
       "sale": true,
       "price": 3345,
       "photo": "./images/bicycle.jpg",
-      "tags": ["lifestyle", "motor"]
+      "tags": [
+        "lifestyle",
+        "motor"
+      ]
     },
     {
       "name": "iPhone 15",
       "sale": false,
       "price": 1350,
       "photo": "./images/iphone15.jpg",
-      "tags": ["work", "mobile"]
+      "tags": [
+        "work",
+        "mobile"
+      ]
     },
     {
       "name": "xbox X",
       "sale": true,
       "price": 499,
       "photo": "./images/xbox-x.jpg",
-      "tags": ["lifestyle"]
+      "tags": [
+        "lifestyle"
+      ]
     },
     {
       "name": "car charger",
       "sale": false,
       "price": 25,
       "photo": "./images/car-charger.jpg",
-      "tags": ["lifestyle", "motor"]
+      "tags": [
+        "lifestyle",
+        "motor"
+      ]
     },
     {
       "name": "iPhone 14",
       "sale": true,
       "price": 1199,
       "photo": "./images/iphone14.jpg",
-      "tags": ["lifestyle", "mobile"]
+      "tags": [
+        "lifestyle",
+        "mobile"
+      ]
     },
     {
       "name": "funda iPhone 15",
       "sale": true,
       "price": 35,
       "photo": "./images/funda-iphone15.jpg",
-      "tags": ["lifestyle", "mobile"]
+      "tags": [
+        "lifestyle",
+        "mobile"
+      ]
     },
     {
       "name": "funda iPhone 14",
       "sale": true,
       "price": 29,
       "photo": "./images/funda-iphone14.jpg",
-      "tags": ["lifestyle", "mobile"]
+      "tags": [
+        "lifestyle",
+        "mobile"
+      ]
     }
   ]
 }

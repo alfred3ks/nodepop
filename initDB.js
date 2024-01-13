@@ -1,10 +1,13 @@
-'use strcit';
+'use strict';
 
 // Initial data loading to the DB:
 const connection = require('./lib/connectMongoose');
-const Product = require('./models/Product');
+
 const readline = require('node:readline');
-const initData = require('./products.json');
+const initData = require('./init-db-data.json');
+
+// This is how we load all the models in a single require:
+const { Product, User } = require('./models');
 
 // handle the error when loading main:
 main().catch((err) => {
@@ -27,6 +30,8 @@ async function main() {
 
   // load the collection of Products:
   await initProducts();
+  // load the collection of Users:
+  await initUsers();
 
   // close the connection:
   connection.close();
@@ -41,6 +46,17 @@ async function initProducts() {
   // add new data to the database:
   const inserted = await Product.insertMany(initData.products);
   console.log(`Created ${inserted.length} products`);
+}
+
+// Function that loads Users:
+async function initUsers() {
+  // delete
+  const deleted = await User.deleteMany();
+  console.log(`Eliminated ${deleted.length} users.`);
+
+  // create
+  const inserted = await User.insertMany(initData.users);
+  console.log(`Created ${inserted.length} users.`);
 }
 
 // Deletion question function:
