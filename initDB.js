@@ -48,15 +48,28 @@ async function initProducts() {
   console.log(`Created ${inserted.length} products`);
 }
 
-// Function that loads Users:
 async function initUsers() {
-  // delete
-  const deleted = await User.deleteMany();
-  console.log(`Eliminated ${deleted.length} users.`);
+  try {
+    // delete
+    const deleted = await User.deleteMany();
+    console.log(`Eliminated ${deleted.length} users.`);
 
-  // create
-  const inserted = await User.insertMany(initData.users);
-  console.log(`Created ${inserted.length} users.`);
+    // Create new users with hashed passwords
+    const usersWithHash = await Promise.all(
+      initData.users.map(async (user) => {
+        const hashedPassword = await User.hashPassword(user.password);
+        return {
+          email: user.email,
+          password: hashedPassword,
+        };
+      })
+    );
+
+    const inserted = await User.insertMany(usersWithHash);
+    console.log(`Created ${inserted.length} users.`);
+  } catch (error) {
+    console.error('Error:', error);
+  }
 }
 
 // Deletion question function:
