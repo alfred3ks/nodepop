@@ -13,6 +13,11 @@ userSchema.statics.hashPassword = function (passwordEnClaro) {
   return bcrypt.hash(passwordEnClaro, 7);
 };
 
+// instance method that checks a user's password:
+userSchema.methods.comparePassword = function (passwordInClear) {
+  return bcrypt.compare(passwordInClear, this.password);
+};
+
 // we create the model:
 const User = mongoose.model('User', userSchema);
 

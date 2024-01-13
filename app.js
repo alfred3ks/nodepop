@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// load the drivers:
+const LoginController = require('./controllers/LoginController');
+
 // connect with the DB:
 require('./lib/connectMongoose');
 
@@ -25,9 +28,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// 📌 create an instance of the controller:
+const loginController = new LoginController();
+
 /*
  * Api routes:
  */
+// JWT middleware:
+app.post('/api/authenticate', loginController.postJWT);
 app.use('/api/products', apiRouter);
 
 /*
