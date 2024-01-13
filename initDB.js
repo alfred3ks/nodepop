@@ -28,10 +28,10 @@ async function main() {
     process.exit();
   }
 
-  // load the collection of Products:
-  await initProducts();
   // load the collection of Users:
   await initUsers();
+  // load the collection of Products:
+  await initProducts();
 
   // close the connection:
   connection.close();

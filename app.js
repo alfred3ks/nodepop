@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// load middleware:
+const jwtAuthMiddleware = require('./lib/jwtAuthMiddleware');
+
 // load the drivers:
 const LoginController = require('./controllers/LoginController');
 
@@ -36,7 +39,7 @@ const loginController = new LoginController();
  */
 // JWT middleware:
 app.post('/api/authenticate', loginController.postJWT);
-app.use('/api/products', apiRouter);
+app.use('/api/products', jwtAuthMiddleware, apiRouter);
 
 /*
  * Web routes:
