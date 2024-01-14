@@ -5,6 +5,9 @@ const Product = require('../../models/Product');
 const validationMiddleware = require('../../lib/validationMiddleware');
 const filterProducts = require('../../lib/filterProducts');
 
+// load the upload module:
+const upload = require('../../lib/uploadConfigure');
+
 // GET: /api/products
 // Get products
 // http://localhost:3000/api/products
@@ -36,11 +39,22 @@ router.get('/:id', async (req, res, next) => {
 // POST: /api/products/
 // Create a product:
 // http://localhost:3000/api/products
-router.post('/', async (req, res, next) => {
+router.post('/', upload.single('img'), async (req, res, next) => {
   try {
     const productData = req.body;
+
+    // obtain the ID of the logged in user:
+    const userLoggedID = req.userLoggedAPI;
+
     // create an agent instance in memory:
     const product = new Product(productData);
+
+    // assign the ID of the logged in user to the product:
+    product.owner = userLoggedID;
+
+    //  image:
+    product.photo = `/images/${req.file.filename}`;
+
     // save in the DB
     const productSaved = await product.save();
 

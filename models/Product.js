@@ -30,6 +30,7 @@ const productSchema = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     },
+    img: { type: String },
   },
   // control the pluralization of mongoose
   { collection: 'products' }
