@@ -1,5 +1,7 @@
 'use strict';
 
+require('dotenv').config();
+
 // Initial data loading to the DB:
 const connection = require('./lib/connectMongoose');
 
