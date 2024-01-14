@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const validationMiddleware = require('../lib/validationMiddleware');
-const filterProductsFrontend = require('../lib/filterProductsFrontd');
+const filterProductsFrontend = require('../lib/filterProductsFrontend');
 
 /* GET home page. */
 // http://localhost:3000
