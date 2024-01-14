@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../stylesheets/style.css" />
-  <title>
-    <%=__('Products')%>
-      <%= title %>
-  </title>
-</head>
-<body>
-  <h1>
-    <%= title %>
-  </h1>
-  <p>
-    <%= __('Welcome to')%>
-      <%= title %>
-  </p>
+<% include header.ejs %>
   <h2>
     <%= __('List of products')%>
   </h2>
@@ -31,7 +13,7 @@
         </h2>
         <img src="<%= product.photo %>" />
         <p class="price">
-          <%= product.price ? `${__('Price')}: ${product.price} €` : '' %>
+          <%= product.price ? `${__('Price')}: ${product.price}${__('€')}` : '' %>
         </p>
         <% if (fields !=='name' && fields !=='price' && fields !=='tags' ) { %>
           <p class="sale">
@@ -44,5 +26,4 @@
       </li>
       <% }); %>
     </ul>
-  </body>
-</html>
+<% include footer.ejs %>

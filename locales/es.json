@@ -1,10 +1,15 @@
 {
-	"Welcome to": "Bienvenido a",
 	"Products": "Productos",
 	"List of products": "Lista de productos",
 	"Products displayed": " Productos mostrados",
 	"Price": "Precio",
 	"Tags": "Etiquetas",
 	"On sale": "En venta",
-	"Yes": "Si"
+	"Yes": "Si",
+	"Your place to buy and sell": "Tu lugar para comprar y vender.",
+	"Your Website 2024. All Rights Reserved.": "Tu sitio web 2024. Todos los derechos reservados.",
+	"Terms": "Términos",
+	"FAQ": "FAQ",
+	"€": "€",
+	" Privacy": " Privacidad"
 }

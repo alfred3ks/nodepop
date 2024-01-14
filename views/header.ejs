@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../stylesheets/style.css" />
+  <title>
+    <%=__('Products')%>
+      <%= title %>
+  </title>
+</head>
+<body>
+  <header class="header">
+    <div>
+      <a href="/" class="title">
+        <h1>
+          <%= title %>
+        </h1>
+      </a>
+      <p>
+        <%= __('Your place to buy and sell')%>
+      </p>
+    </div>
+    <nav class="locale-nav">
+      <% getLocales().forEach(locale=> { %>
+        <a href="/change-locale/<%= locale %>" class="locale-link <%= locale %>">
+          <%= locale %>
+        </a>
+        <% }); %>
+    </nav>
+
+  </header>

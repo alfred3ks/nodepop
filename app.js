@@ -50,6 +50,8 @@ app.use('/api/products', jwtAuthMiddleware, apiRouter);
 // Middleware of the languages ​​to use for each request:
 app.use(i18n.init);
 app.use('/', indexRouter);
+// Middleware of routes for translation:
+app.use('/change-locale', require('./routes/change-locale'));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,3 +1,117 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  background-color: #000000;
+}
+
+.header>div {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.title {
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+nav {
+  display: flex;
+}
+
+nav a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 3.2rem;
+  padding-left: 20px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+/* Styles for the local navigation bar */
+.locale-nav {
+  display: flex;
+}
+
+/* Styles for local links*/
+.locale-link {
+  font-size: 1.6rem;
+  color: #007bff;
+  text-transform: uppercase;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Styles for the flag of Spain */
+.locale-link.es {
+  background: url('./../images/es.png') no-repeat center;
+  background-size: contain;
+  padding-left: 50px;
+}
+
+/* Styles for the United States flag */
+.locale-link.en {
+  background: url('./../images/en.png') no-repeat center;
+  background-size: contain;
+  padding-left: 50px;
+}
+
+.locale-link:hover {
+  color: #6b8bae;
+}
+
+p {
+  font-size: 1.6rem;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+p.price {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+p.sale {
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 5px;
+}
+
+p.tags {
+  font-style: italic;
+  color: #888;
+  margin-bottom: 5px;
+}
+
 /* Set the body as a grid container */
 ul {
   display: grid;
@@ -6,22 +120,6 @@ ul {
   margin: 0;
   padding: 0 20px;
   font-family: Arial, sans-serif;
-}
-
-h1 {
-  font-size: 24px;
-  padding-left: 20px;
-}
-
-h2 {
-  font-size: 18px;
-  margin: 10px 0;
-  padding-left: 20px;
-}
-
-p {
-  font-size: 16px;
-  padding-left: 20px;
 }
 
 li {
@@ -34,17 +132,10 @@ img {
   width: 250px;
 }
 
-p.price {
-  font-weight: bold;
-  color: #007bff;
-}
-
-p.sale {
-  font-weight: bold;
-  color: #28a745;
-}
-
-p.tags {
-  font-style: italic;
-  color: #888;
+footer {
+  font-size: 1.6rem;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
