@@ -11,7 +11,7 @@
   ],
   "products": [
     {
-      "name": "bicycle",
+      "name": "Bicycle",
       "sale": true,
       "price": 3345,
       "photo": "./images/bicycle.jpg",
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "name": "car charger",
+      "name": "Car charger",
       "sale": false,
       "price": 25,
       "photo": "./images/car-charger.jpg",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "name": "funda iPhone 15",
+      "name": "Funda iPhone 15",
       "sale": true,
       "price": 35,
       "photo": "./images/funda-iphone15.jpg",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "name": "funda iPhone 14",
+      "name": "Funda iPhone 14",
       "sale": true,
       "price": 29,
       "photo": "./images/funda-iphone14.jpg",

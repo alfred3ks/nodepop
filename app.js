@@ -4,6 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// load i18n for internalization:
+const i18n = require('./lib/i18nConfigure');
+
 // load middleware:
 const jwtAuthMiddleware = require('./lib/jwtAuthMiddleware');
 
@@ -44,6 +47,8 @@ app.use('/api/products', jwtAuthMiddleware, apiRouter);
 /*
  * Web routes:
  */
+// Middleware of the languages ​​to use for each request:
+app.use(i18n.init);
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
